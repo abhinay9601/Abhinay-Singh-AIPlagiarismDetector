@@ -22,7 +22,7 @@ const Contact = () => (
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen flex justify-center w-[100vw] flex-col">
+      <div className="min-h-screen flex justify-center flex-col">
         <Header />
         <main className="flex-grow ">
           <Routes>
