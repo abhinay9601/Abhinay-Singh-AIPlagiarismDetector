@@ -22,7 +22,7 @@ const corsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization'],
 };
   
-app.use(cors());
+app.use(cors(corsOptions));
 
 const plagiarismRoutes = require("./src/routes/plagiarismRoutes");
 app.use("/api", plagiarismRoutes);
