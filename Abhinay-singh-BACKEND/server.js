@@ -8,6 +8,20 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
 
+// Configure CORS
+const corsOptions = {
+    origin: function (origin, callback) {
+      const allowedOrigins = ['http://localhost:5173', 'https://abhinay-singh-ai-plagiarism-detector-client.vercel.app'];
+      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+};
+  
 app.use(cors());
 
 const plagiarismRoutes = require("./src/routes/plagiarismRoutes");
