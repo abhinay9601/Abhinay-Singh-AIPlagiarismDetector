@@ -18,9 +18,8 @@ app.use("/", (req, res) => {
     res.send("Server is Running")
 })
 // Local server setup
-if (process.env.NODE_ENV !== "lambda") {
-  const port = process.env.PORT || 3001;
-  app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-  });
-}
+const port = process.env.PORT || 3001;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
