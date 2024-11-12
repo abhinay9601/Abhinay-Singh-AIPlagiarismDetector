@@ -11,7 +11,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const plagiarismRoutes = require("./src/routes/plagiarismRoutes");
-
+app.use("/", (req, res) => {
+    res.send("Server is Running")
+})
 app.use("/api", plagiarismRoutes);
 
 // Serverless handler export
