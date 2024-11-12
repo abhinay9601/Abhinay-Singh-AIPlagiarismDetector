@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/atoms/footer.tsx","./src/atoms/header.tsx","./src/components/homepage.tsx","./src/components/plagiarismchecker.tsx","./src/services/api.ts","./src/services/plagiarismservice.ts"],"version":"5.6.2"}
