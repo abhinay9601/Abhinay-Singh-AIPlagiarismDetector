@@ -1,4 +1,4 @@
-const serverless = require("serverless-http");
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -11,14 +11,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const plagiarismRoutes = require("./src/routes/plagiarismRoutes");
+app.use("/api", plagiarismRoutes);
+
+
 app.use("/", (req, res) => {
     res.send("Server is Running")
 })
-app.use("/api", plagiarismRoutes);
-
-// Serverless handler export
-module.exports.handler = serverless(app);
-
 // Local server setup
 if (process.env.NODE_ENV !== "lambda") {
   const port = process.env.PORT || 3001;
