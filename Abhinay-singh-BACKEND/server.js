@@ -10,12 +10,16 @@ app.use(bodyParser.json());
 
 // Configure CORS
 const corsOptions = {
-    origin: '*', // Allow all origins
+    origin: ['https://abhinay-singh-ai-plagiarism-detector-client.vercel.app', 'http://localhost:5173'], // Allow specific origins
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: ['Content-Type', 'Authorization'],
-};
+  };
   
 app.use(cors(corsOptions));
+
+// Configure multer for file uploads
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
 const plagiarismRoutes = require("./src/routes/plagiarismRoutes");
 app.use("/api", plagiarismRoutes);
